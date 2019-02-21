@@ -9,8 +9,7 @@ var module2 = require('./folder/module2.js');
 var mongo = require('mongodb');
 var nodemailer = require('nodemailer');
 var MongoClient = require('mongodb').MongoClient;
-//var url = "mongodb://127.0.0.1:27017/Employee";
-var url = "mongodb://priya2105:priya2105@timesheet-shard-00-00-bzikt.mongodb.net:27017,timesheet-shard-00-01-bzikt.mongodb.net:27017,timesheet-shard-00-02-bzikt.mongodb.net:27017/timesheet?ssl=true&replicaSet=TimeSheet-shard-0&authSource=admin&retryWrites=true";
+var url = "mongodb://reemameher1997:kalpana123@cluster0-shard-00-00-q4nr2.mongodb.net:27017,cluster0-shard-00-01-q4nr2.mongodb.net:27017,cluster0-shard-00-02-q4nr2.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   host: "smtp.gmail.com",
@@ -33,34 +32,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use('/modpule2Path', module2);
 
 
-app.post('/m', function (req, res) {
-  var empid = req.body.name1;
-  console.log(empid);
-  var pass1 = req.body.pass1;
+app.post('/login', function (req, res) {
+  var id1 = req.body.id;
+  console.log(id1);
+  var password1 = req.body.password;
   var redirect1 = req.body.redirect1;
   var redirect2 = req.body.redirect2;
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     console.log("connected");
-    //console.log(name1);
-    var dbo = db.db("timesheet");
-    // var myobj1 = { name: "rubina", password: "priya" };
-    var myobj = dbo.collection("user_details").findOne({ id: empid, password: pass1 }, function (err, ress) {
+    var dbo = db.db("hostel_management");
+    var myobj = dbo.collection("login").findOne({ ID: id1, Pass: password1 }, function (err, ress) {
 
       if (err) {
         console.log("error");
       }
-      else if (ress.utype == "admin") {
+      else if (ress.ID == "100") {
         redirect1 = true;
-        res.json({ status: true, result1: redirect1, name: ress.name });
+        res.json({ status: true, result1: redirect1, name: ress.name, result:"successfull admin" });
         console.log("found1");
       }
-      else if (ress.utype == "user") {
+      else if (ress.ID == "101") {
 
         redirect2 = true;
         res.json({
           status: true
-          , result2: redirect2, name: ress.name
+          , result2: redirect2, name: ress.name , result:"successfull user"
         });
         console.log("found2");
         console.log(ress.name);
