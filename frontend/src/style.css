@@ -1,0 +1,17 @@
+.body{
+    background-image: url(./images/login.jpg);
+    background-size: cover;
+}
+li a:hover {
+    background-color:gray;
+  }
+
+  li a:active {
+    background-color:black;
+  }
+  ul{
+    display: "inline-block";
+margin-top: 0;
+   width:100%;
+    color:white;
+  }
