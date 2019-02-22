@@ -74,6 +74,59 @@ app.post('/login', function (req, res) {
 
 });
 
+
+
+
+app.post('/details', function (req, res) {
+  var id1 = req.body.id;
+  var name1 = req.body.name
+  var phone1 = req.body.phone;
+  var dept1 = req.body.dept;
+  var email1 = req.body.email;
+  var sem1 = req.body.sem;
+
+  var loading;
+  var message = "Data has been uploaded";
+  var message1 = "Data already exists";
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    console.log("connected");
+    var dbo = db.db("Exam_Cell_Automation");
+    var myobj1 = dbo.collection("student_details").findOne({ ID: id1 }, function (err2, ress3) {
+      if (ress3) {
+        console.log("if loop");
+        res.json({ result: message1});
+      }
+      else {
+        console.log("else loop");
+        var myobj = dbo.collection("student_details").insert({ ID: id1, Name: name1, Phone: phone1, dept: dept1, email: email1 , sem:sem1}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+
+          db.close();
+        });
+      }
+    });
+  });
+
+});
+
+
+
+
+
+
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
