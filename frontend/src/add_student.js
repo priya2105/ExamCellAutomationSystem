@@ -10,6 +10,8 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Fade from '@material-ui/core/Fade';
 import Grid from '@material-ui/core/Grid';
 import{
   BrowserRouter as Router,Route,Link,Redirect
@@ -19,15 +21,24 @@ export default class Add_student extends Component {
     constructor(props){
         super(props);
         this.state={
-           // open:false
+          email:"",
+          id1:"",
+          message:"",
+          loading:false,
+          open:false
         }
-        // this.handleChange1=this.handleChange1.bind(this);
-        // this.handleChange=this.handleChange.bind(this);
-        // this.handleChange2=this.handleChange2.bind(this);
+        this.handleChange1=this.handleChange1.bind(this);
+        this.handleChange=this.handleChange.bind(this);
        }
        submit()
        {
-         fetch('http://localhost:8000/mail',
+         this.setState({
+         id1:"",
+          email:"",
+          loading:true,
+          open:true
+         })
+         fetch('http://localhost:8000/add_student',
          {
            method:'POST',
            headers:{
@@ -35,9 +46,8 @@ export default class Add_student extends Component {
              'Content-Type':'application/json'
            },
            body:JSON.stringify({
-              name1:this.state.name,
-              mail:this.state.email,
-              empid:this.state.empid
+             id1:this.state.id1,
+             email:this.state.email
               
            }),
           })
@@ -45,7 +55,10 @@ export default class Add_student extends Component {
            .then((responseJson)=>{
              console.log(responseJson);
              this.setState({
-                message1:responseJson.key
+              message1:responseJson.result,
+              message:responseJson.key,
+              loading:responseJson.loading,
+
              })
            })
            .catch((error)=>{
@@ -55,24 +68,20 @@ export default class Add_student extends Component {
           }
           handleChange(event){
             this.setState({
-              empid:event.target.value
+              id1:event.target.value
             })
           }
        handleChange1(event){
          this.setState({
-           name:event.target.value
+          email:event.target.value
          })
        }
-       handleChange2(event){
+       handleClose (){
         this.setState({
-            email:event.target.value
-        })
+          open:false,
+          message:''})
+          
       }
-      handleClose (){
-        this.setState({
-          open:false})
-      }
-    
        render(){
         return (
             <div style={{height:"100vh"}}>
@@ -112,13 +121,13 @@ export default class Add_student extends Component {
     <br></br>
     <br></br>
     <label  style={{color:"white" }}> Email-ID:<br></br></label>
-    <TextField value={this.state.password1} onChange={this.handleChange1} style={{backgroundColor:"white"}}
+    <TextField value={this.state.email} onChange={this.handleChange1} style={{backgroundColor:"white"}}
           id="outlined-email-input"
-          label="Password"
-          type="password"
-          name="password"
-          autoComplete="password"
-          margin="password"
+          label="Email"
+          type="text"
+          name="email"
+          autoComplete="email"
+          margin="right"
           variant="outlined"
         />
         <br></br>
@@ -128,7 +137,26 @@ export default class Add_student extends Component {
        <Button variant="outlined" size="medium" color="primary" marginBottom=" 12" marginLeft="100" style={{marginRight:20,color:"white"}} onClick={this.submit.bind(this)}>
           Submit
         </Button>
-        <label style={{color:"white"}}>{this.state.key}</label>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}>
+           <Grid container justify='center' style={{marginTop:10}}>
+           <Fade
+            in={this.state.loading}
+        
+            unmountOnExit
+          >
+            <CircularProgress />
+          </Fade>
+           </Grid>
+          <DialogTitle>{this.state.message}</DialogTitle>
+          <DialogActions>
+            
+            <Button onClick={this.handleClose.bind(this)} color="primary" autoFocus>
+              Ok
+            </Button>
+          </DialogActions>
+        </Dialog>
         </Grid>
       </CardActions>
      </Card>
