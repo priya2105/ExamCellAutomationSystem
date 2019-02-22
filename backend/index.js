@@ -70,9 +70,73 @@ app.post('/login', function (req, res) {
 
     });
   });
-
-
 });
+
+app.post('/add_student', function (req, res) {
+  var id = req.body.id1;
+  var mail = req.body.email;
+  var autopd;
+  var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var capalpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  var alphanum = Math.floor(Math.random() * 26);
+  var capalphanum = Math.floor(Math.random() * 26);
+  var digit = Math.floor(Math.random() * 10);
+  autopd = alpha[alphanum] + digit + capalphanum + capalpha[capalphanum] + alpha[capalphanum] + capalpha[alphanum] + alphanum
+  console.log(autopd);
+  console.log(mail);
+  var client_password;
+  MongoClient.connect(url, function (err, db) {
+    var dbo = db.db("Exam_Cell_Automation");
+    var myobj1 = dbo.collection("login").find({}).toArray(function (err1, ress) {
+      var exist = 0;
+      for (var i = 0; i < ress.length; i++) {
+        if (id == ress[i].ID) {
+          exist = 1;
+          break;
+        }
+      }
+      if (exist == 0) {
+        console.log("if");
+        var myobj = dbo.collection("login").insert({ ID: id, password: autopd, utype: "user", email: mail}, function (err1, ress) {
+          if (err1) {
+            res.json({ status: false, message: "Email id doesn't exist" });
+          }
+          else {
+
+            var pass = autopd;
+            var mailOptions = {
+              from: "TEST",
+              to: mail,
+              subject: 'password',
+              text: "Hello please enter your registration id and password is " + pass,
+              tls: {
+                rejectUnauthorized: false
+              }
+            }
+            console.log("done");
+            res.json({ key: "Student added" })
+            transporter.sendMail(mailOptions, function (err2, info) {
+              console.log(err2);
+              if (err) {
+                res.json({ status: false });
+              }
+              else {
+                console.log(info);
+                res.json({ status: true });
+              }
+            })
+          }
+        });
+      }
+      else {
+        console.log("else");
+        res.json({ key: "failed to add, student already exist" })
+      }
+      db.close();
+    });
+
+  });
+})
 
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
