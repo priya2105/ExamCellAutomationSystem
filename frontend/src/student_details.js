@@ -137,12 +137,12 @@ render(){
         <marquee style={{width:1400,height:70,color:"white"}}><h1>Exam Cell Automation</h1></marquee>
      
      <ul style={{listStyleType:"none"}}>
-      <li style={{float:"left",marginLeft:10,}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>Home</b></Link></li>
-      <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>Add Details</b></Link></li>
+      <li style={{float:"left",marginLeft:10,}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/user_dashboard'}}><b>Home</b></Link></li>
+      <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/student_details'}}><b>Add Details</b></Link></li>
        <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>View Marks</b></Link></li>
       <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>Notice Board</b></Link></li>
       
-       <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/login'}}><b>Logout</b></Link></li>
+       <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>Logout</b></Link></li>
       
 </ul>
  </tr>

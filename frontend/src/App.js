@@ -18,7 +18,6 @@ class App extends Component {
          <Route exact path='/admin_dashboard' component={Admin_Dashboard}/>
          <Route exact path='/add_student' component={Add_student}/>
          <Route exact path='/user_dashboard' component={User_Dashboard}/>
-  
   <Route exact path='/' component={Login}/> 
   <Route exact path='/student_details' component={Student_Details}/> 
       </div>
