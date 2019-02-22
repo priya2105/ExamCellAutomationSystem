@@ -47,12 +47,12 @@ app.post('/login', function (req, res) {
       if (err) {
         console.log("error");
       }
-      else if (ress.ID == "100") {
+      else if (ress.utype == "admin") {
         redirect1 = true;
         res.json({ status: true, result1: redirect1, name: ress.name, result:"successfull admin" });
         console.log("found1");
       }
-      else if (ress.ID == "101") {
+      else if (ress.utype == "user") {
 
         redirect2 = true;
         res.json({

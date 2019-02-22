@@ -68,8 +68,8 @@ render(){
          return <Redirect to={{
            pathname: '/admin_dashboard',
            state: {
-            id1:this.state.id1,
-             password1: this.state.password1
+           // id1:this.state.id1,
+             //password1: this.state.password1
            }
          }} />
       }
