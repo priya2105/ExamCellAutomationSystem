@@ -41,7 +41,7 @@ app.post('/login', function (req, res) {
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     console.log("connected");
-    var dbo = db.db("hostel_management");
+    var dbo = db.db("Exam_Cell_Automation");
     var myobj = dbo.collection("login").findOne({ ID: id1, Pass: password1 }, function (err, ress) {
 
       if (err) {
