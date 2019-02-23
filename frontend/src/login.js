@@ -73,16 +73,12 @@ render(){
            }
          }} />
       }
-    //   else if (this.state.redirect2 == true) {
-    //     return <Redirect to={{
-    //       pathname: '/user_dashboard',
-    //       state: {
-  
-    //         id1: this.state.id1,
-    //         password1: this.state.password1
-    //       }
-    //     }} />
-    //   }
+      else if (this.state.redirect2 == true) {
+        return <Redirect to={{
+          pathname: '/user_dashboard',
+        
+        }} />
+      }
   return (
     <div>
       <Grid container justify="center" style={{ background: 'url(https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)',
@@ -121,7 +117,7 @@ render(){
        <Button variant="outlined" size="medium" color="primary" marginBottom=" 12" style={{marginRight:20,color:"white"}} onClick={this.submit.bind(this)}>
           Login
         </Button>
-        <label style={{color:"white"}}>{this.state.key}</label>
+       
         </Grid>
       </CardActions>
       </Card>

@@ -49,18 +49,18 @@ app.post('/login', function (req, res) {
       }
       else if (ress.utype == "admin") {
         redirect1 = true;
-        res.json({ status: true, result1: redirect1, name: ress.name, result:"successfull admin" });
+        res.json({ status: true, result1: redirect1 });
         console.log("found1");
       }
       else if (ress.utype == "user") {
-
+         console.log("user");
         redirect2 = true;
         res.json({
           status: true
-          , result2: redirect2, name: ress.name , result:"successfull user"
+          , result2: redirect2
         });
         console.log("found2");
-        console.log(ress.name);
+    
       }
       else {
         console.log(" not found");
@@ -97,7 +97,7 @@ app.post('/add_student', function (req, res) {
       }
       if (exist == 0) {
         console.log("if");
-        var myobj = dbo.collection("login").insert({ ID: id, password: autopd, utype: "user", email: mail}, function (err1, ress) {
+        var myobj = dbo.collection("login").insert({ ID: id, Pass: autopd, utype: "user", email: mail}, function (err1, ress) {
           if (err1) {
             res.json({ status: false, message: "Email id doesn't exist" });
           }

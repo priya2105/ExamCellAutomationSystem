@@ -87,7 +87,7 @@ export default class User_dashboard extends Component {
              <ul style={{listStyleType:"none"}}>
              <li style={{float:"left",marginLeft:10,}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/user_dashboard'}}><b>Home</b></Link></li>
              
-              <li style={{float:"left",marginLeft:40,}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>Add Details</b></Link></li>
+              <li style={{float:"left",marginLeft:40,}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/student_details'}}><b>Add Details</b></Link></li>
               <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>View Marks</b></Link></li>
                <li style={{float:"left",marginLeft:50}}><Link style={{color:"white",textDecoration:"none"}} to={{pathname:'/'}}><b>Notice</b></Link></li>
               
