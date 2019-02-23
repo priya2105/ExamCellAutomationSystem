@@ -156,14 +156,16 @@ app.post('/details', function (req, res) {
     if (err) throw err;
     console.log("connected");
     var dbo = db.db("Exam_Cell_Automation");
-    var myobj1 = dbo.collection("student_details").findOne({ ID: id1 }, function (err2, ress3) {
-      if (ress3) {
-        console.log("if loop");
-        res.json({ result: message1});
-      }
-      else {
-        console.log("else loop");
-        var myobj = dbo.collection("student_details").insert({ ID: id1, Name: name1, Phone: phone1, dept: dept1, email: email1 , sem:sem1}, function (err, ress) {
+        if(sem1=="1st"){
+          console.log("1");
+        var myobj = dbo.collection("student_details").insert({ id:1,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -177,12 +179,200 @@ app.post('/details', function (req, res) {
             console.log(" not found");
           }
 
+          
+          db.close();
+        });
+      }
+       else if(sem1=="2nd"){
+        console.log("2");
+        var myobj = dbo.collection("student_details").insert({ id:2,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
 
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+     else if(sem1=="3rd"){
+      console.log("3");
+        var myobj = dbo.collection("student_details").insert({ id:3,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+      if(sem1=="4th"){
+        console.log("4");
+        var myobj = dbo.collection("student_details").insert({ id:4,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+      else if(sem1=="5th"){
+        console.log("5");
+        var myobj = dbo.collection("student_details").insert({ id:5,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+     else if(sem1=="6th"){
+      console.log("6");
+        var myobj = dbo.collection("student_details").insert({ id:6,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+     else if(sem1=="7th"){
+      console.log("7");
+        var myobj = dbo.collection("student_details").insert({ id:7,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+      else if(sem1=="8th"){
+        console.log("8");
+        var myobj = dbo.collection("student_details").insert({ id:8,student:[{
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }]}, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
           db.close();
         });
       }
     });
-  });
 
 });
 
