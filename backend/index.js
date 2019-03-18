@@ -165,8 +165,12 @@ app.post('/details', function (req, res) {
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1,
-                                                        cndc:"",
-                                                        wsn:"",
+                                                       c_programming:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                       Applied_mathematics_I:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                       Basic_Civil_Engineering:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                       Applied_chemistry:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                       English_Communication:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                       Professional_Ethics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
 
         }, function (err, ress) {
 
@@ -194,7 +198,14 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        Data_Structue:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Applied_physics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Basic_electrical_engg:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        EVS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Basic_mechanical_engg:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Applied_mathematics_II:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+
         }, function (err, ress) {
 
           if (err) {
@@ -221,7 +232,14 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        EEE:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        System_programming:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Organisational_Behaviour:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Software_engg:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Discrete_Structure:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        JAVA:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Artificial_Intelligence:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
         }, function (err, ress) {
 
           if (err) {
@@ -248,7 +266,14 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        COA:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        DAA:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Engg_economics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Applied_mathematics_III:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        DBMS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        FLAT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Data_analytics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
         }, function (err, ress) {
 
           if (err) {
@@ -275,7 +300,13 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        DWDM:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Operating_system:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Computer_Graphics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Ecommerce:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Advance_JAVA:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        RTS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
         }, function (err, ress) {
 
           if (err) {
@@ -302,7 +333,14 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        CNDC:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        IWT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        CD_WSN:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        OOSE_ML:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        GT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        BCSI:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        Embedded_system:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
         }, function (err, ress) {
 
           if (err) {
@@ -329,7 +367,12 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        Mobile_Computing:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        cryptography:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        soft_computing:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        IOT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        
         }, function (err, ress) {
 
           if (err) {
@@ -356,7 +399,11 @@ app.post('/details', function (req, res) {
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
+                                                        Sem:sem1,
+                                                        Satellite_Comm_System:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        MEMS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+
+
         }, function (err, ress) {
 
           if (err) {
