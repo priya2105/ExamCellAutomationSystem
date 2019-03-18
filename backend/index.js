@@ -158,14 +158,17 @@ app.post('/details', function (req, res) {
     var dbo = db.db("Exam_Cell_Automation");
         if(sem1=="1st"){
           console.log("1");
-        var myobj = dbo.collection("student_details").insert({ id:1,student:[{
+        var myobj = dbo.collection("1").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
-                                                        Sem:sem1
-        }]}, function (err, ress) {
+                                                        Sem:sem1,
+                                                        cndc:"",
+                                                        wsn:"",
+
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -185,14 +188,14 @@ app.post('/details', function (req, res) {
       }
        else if(sem1=="2nd"){
         console.log("2");
-        var myobj = dbo.collection("student_details").insert({ id:2,student:[{
+        var myobj = dbo.collection("2").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -212,14 +215,14 @@ app.post('/details', function (req, res) {
       }
      else if(sem1=="3rd"){
       console.log("3");
-        var myobj = dbo.collection("student_details").insert({ id:3,student:[{
+        var myobj = dbo.collection("3").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -239,14 +242,14 @@ app.post('/details', function (req, res) {
       }
       if(sem1=="4th"){
         console.log("4");
-        var myobj = dbo.collection("student_details").insert({ id:4,student:[{
+        var myobj = dbo.collection("4").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -266,14 +269,14 @@ app.post('/details', function (req, res) {
       }
       else if(sem1=="5th"){
         console.log("5");
-        var myobj = dbo.collection("student_details").insert({ id:5,student:[{
+        var myobj = dbo.collection("5").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -293,14 +296,14 @@ app.post('/details', function (req, res) {
       }
      else if(sem1=="6th"){
       console.log("6");
-        var myobj = dbo.collection("student_details").insert({ id:6,student:[{
+        var myobj = dbo.collection("6").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -320,14 +323,14 @@ app.post('/details', function (req, res) {
       }
      else if(sem1=="7th"){
       console.log("7");
-        var myobj = dbo.collection("student_details").insert({ id:7,student:[{
+        var myobj = dbo.collection("7").insert({
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
@@ -347,14 +350,14 @@ app.post('/details', function (req, res) {
       }
       else if(sem1=="8th"){
         console.log("8");
-        var myobj = dbo.collection("student_details").insert({ id:8,student:[{
+        var myobj = dbo.collection("8").insert({ 
                                                         RegdID:id1,
                                                         Name:name1,
                                                         Phone:phone1,
                                                         Email:email1,
                                                         Dept:dept1,
                                                         Sem:sem1
-        }]}, function (err, ress) {
+        }, function (err, ress) {
 
           if (err) {
             console.log("error");
