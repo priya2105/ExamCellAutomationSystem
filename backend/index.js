@@ -49,18 +49,18 @@ app.post('/login', function (req, res) {
       }
       else if (ress.utype == "admin") {
         redirect1 = true;
-        res.json({ status: true, result1: redirect1, name: ress.name, result:"successfull admin" });
+        res.json({ status: true, result1: redirect1 });
         console.log("found1");
       }
       else if (ress.utype == "user") {
-
+         console.log("user");
         redirect2 = true;
         res.json({
           status: true
-          , result2: redirect2, name: ress.name , result:"successfull user"
+          , result2: redirect2
         });
         console.log("found2");
-        console.log(ress.name);
+    
       }
       else {
         console.log(" not found");
@@ -97,7 +97,7 @@ app.post('/add_student', function (req, res) {
       }
       if (exist == 0) {
         console.log("if");
-        var myobj = dbo.collection("login").insert({ ID: id, password: autopd, utype: "user", email: mail}, function (err1, ress) {
+        var myobj = dbo.collection("login").insert({ ID: id, Pass: autopd, utype: "user", email: mail}, function (err1, ress) {
           if (err1) {
             res.json({ status: false, message: "Email id doesn't exist" });
           }
@@ -137,6 +137,252 @@ app.post('/add_student', function (req, res) {
 
   });
 })
+
+
+
+
+app.post('/details', function (req, res) {
+  var id1 = req.body.id;
+  var name1 = req.body.name
+  var phone1 = req.body.phone;
+  var dept1 = req.body.dept;
+  var email1 = req.body.email;
+  var sem1 = req.body.sem;
+
+  var loading;
+  var message = "Data has been uploaded";
+  var message1 = "Data already exists";
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    console.log("connected");
+    var dbo = db.db("Exam_Cell_Automation");
+        if(sem1=="1st"){
+          console.log("1");
+        var myobj = dbo.collection("1").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1,
+                                                        cndc:"",
+                                                        wsn:"",
+
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+       else if(sem1=="2nd"){
+        console.log("2");
+        var myobj = dbo.collection("2").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+     else if(sem1=="3rd"){
+      console.log("3");
+        var myobj = dbo.collection("3").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+      if(sem1=="4th"){
+        console.log("4");
+        var myobj = dbo.collection("4").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+      else if(sem1=="5th"){
+        console.log("5");
+        var myobj = dbo.collection("5").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+     else if(sem1=="6th"){
+      console.log("6");
+        var myobj = dbo.collection("6").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+     else if(sem1=="7th"){
+      console.log("7");
+        var myobj = dbo.collection("7").insert({
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+      else if(sem1=="8th"){
+        console.log("8");
+        var myobj = dbo.collection("8").insert({ 
+                                                        RegdID:id1,
+                                                        Name:name1,
+                                                        Phone:phone1,
+                                                        Email:email1,
+                                                        Dept:dept1,
+                                                        Sem:sem1
+        }, function (err, ress) {
+
+          if (err) {
+            console.log("error");
+          }
+          else if (ress) {
+
+            res.json({ status: true, result: message, loading:false});
+            console.log("found");
+          }
+          else {
+            console.log(" not found");
+          }
+
+          
+          db.close();
+        });
+      }
+    });
+
+});
+
+
+
+
+
 
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));

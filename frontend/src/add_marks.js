@@ -273,7 +273,7 @@ else if(event.target.value=="8th"){
         </TextField>
         <br></br>
         <hr></hr>
-        </Grid>
+        </Grid> 
         </Grid>
         <Grid container spacing={12}>
         <Grid container justify="center" textAlign="center" xs={2}  >

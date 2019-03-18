@@ -10,6 +10,7 @@ import{
   BrowserRouter as Router,Route,Link,Redirect
 } from"react-router-dom";
 import Login from './login';
+import Student_Details from './student_details';
 class App extends Component {
   render() {
     return (
@@ -18,8 +19,8 @@ class App extends Component {
          <Route exact path='/admin_dashboard' component={Admin_Dashboard}/>
          <Route exact path='/add_student' component={Add_student}/>
          <Route exact path='/user_dashboard' component={User_Dashboard}/>
-         <Route exact path='/add_marks' component={Add_Marks}/>
   <Route exact path='/' component={Login}/> 
+  <Route exact path='/student_details' component={Student_Details}/> 
       </div>
       </Router>
      
