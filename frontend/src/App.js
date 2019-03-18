@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Admin_Dashboard from './admin_dashboard';
 import Add_student from './add_student';
-import User_Dashboard from './user_dashboard';
+import User_Dashboard from './user_dashboard'
+import Add_Marks from './add_marks';
 
 import{
   BrowserRouter as Router,Route,Link,Redirect
