@@ -170,7 +170,8 @@ app.post('/details', function (req, res) {
                                                        Basic_Civil_Engineering:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                        Applied_chemistry:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                        English_Communication:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                       Professional_Ethics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                       Professional_Ethics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                       total:""
 
         }, function (err, ress) {
 
@@ -205,6 +206,7 @@ app.post('/details', function (req, res) {
                                                         EVS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         Basic_mechanical_engg:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         Applied_mathematics_II:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
 
         }, function (err, ress) {
 
@@ -239,7 +241,8 @@ app.post('/details', function (req, res) {
                                                         Software_engg:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         Discrete_Structure:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         JAVA:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                        Artificial_Intelligence:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        Artificial_Intelligence:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
         }, function (err, ress) {
 
           if (err) {
@@ -273,7 +276,8 @@ app.post('/details', function (req, res) {
                                                         Applied_mathematics_III:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         DBMS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         FLAT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                        Data_analytics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        Data_analytics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
         }, function (err, ress) {
 
           if (err) {
@@ -306,7 +310,8 @@ app.post('/details', function (req, res) {
                                                         Computer_Graphics:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         Ecommerce:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         Advance_JAVA:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                        RTS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        RTS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
         }, function (err, ress) {
 
           if (err) {
@@ -340,7 +345,8 @@ app.post('/details', function (req, res) {
                                                         OOSE_ML:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         GT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         BCSI:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                        Embedded_system:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        Embedded_system:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
         }, function (err, ress) {
 
           if (err) {
@@ -371,7 +377,8 @@ app.post('/details', function (req, res) {
                                                         Mobile_Computing:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         cryptography:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
                                                         soft_computing:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                        IOT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        IOT:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
                                                         
         }, function (err, ress) {
 
@@ -401,7 +408,8 @@ app.post('/details', function (req, res) {
                                                         Dept:dept1,
                                                         Sem:sem1,
                                                         Satellite_Comm_System:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
-                                                        MEMS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}]
+                                                        MEMS:[{internal1:"",internal2:"",quiz:"",surprise_test:"",assignment:"",attendance:""}],
+                                                        total:""
 
 
         }, function (err, ress) {
