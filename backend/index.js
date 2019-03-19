@@ -378,7 +378,99 @@ app.post('/details', function (req, res) {
     });
 
 });
+app.post('/semester', function (req, res) {
+  var id1 = req.body.id;
+  var semester = req.body.semester;
+  var loading;
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    console.log("connected");
+    console.log(semester);
+    var dbo = db.db("Exam_Cell_Automation");
+    if(semester=="1st"){
+    var myobj1 = dbo.collection("1").find({}).toArray(function(err1 , ress){
+      if (err1) {
+        console.log(err1)
+        }
+    
+          else {
+            var arr = [];
+            console.log(ress);
+            for (var i = 0; i < ress.length; i++) {
+              arr.push(ress[i]);
+            }
+            res.json({result:arr});
+            
+          }})}
 
+    else if(semester=="2nd"){
+   var myobj1 = dbo.collection("2").find({}).toArray(function(err1 , ress){
+  for(var i = 0; i< ress.length;i++)
+        { 
+  var arr=[];
+ arr=ress.RegdID;
+        }})
+ console.log(arr);
+  res.json({result:arr});
+ db.close();}
+  if(semester=="3rd"){
+ var myobj1 = dbo.collection("3").find({}).toArray(function(err1 , ress){
+ for(var i = 0; i< ress.length;i++)
+  { 
+  arr=ress.RegdID;
+ }})
+ console.log(arr);
+  res.json({result:arr});
+   db.close();}
+ if(semester=="4th"){
+var myobj1 = dbo.collection("4").find({}).toArray(function(err1 , ress){
+for(var i = 0; i< ress.length;i++)
+ { 
+  arr=ress.RegdID;
+ }})
+ console.log(arr);
+  res.json({result:arr});
+  db.close();}
+ if(semester=="5th"){
+ var myobj1 = dbo.collection("5").find({}).toArray(function(err1 , ress){
+ for(var i = 0; i< ress.length;i++)
+  { 
+   arr=ress.RegdID;
+  }})
+ console.log(arr);
+  res.json({result:arr});
+ db.close();}
+ if(semester=="6th"){
+  var myobj1 = dbo.collection("6").find({}).toArray(function(err1 , ress){
+  for(var i = 0; i< ress.length;i++)
+  { 
+    arr=ress.RegdID;
+  }})
+ console.log(arr);
+ res.json({result:arr});
+  db.close();}
+ if(semester=="7th"){
+  var myobj1 = dbo.collection("7").find({}).toArray(function(err1 , ress){
+ for(var i = 0; i< ress.length;i++)
+  { 
+ arr=ress.RegdID;
+ }})
+ console.log(arr);
+   res.json({result:arr});
+   db.close();}
+ if(semester=="8th"){
+   var myobj1 = dbo.collection("8").find({}).toArray(function(err1 , ress){
+    for(var i = 0; i< ress.length;i++)
+   { 
+ arr=ress.RegdID;
+  }})
+  console.log(ress.RegdID);
+   res.json({result:arr});
+    db.close();}
+     
+    });
+
+});
 
 
 

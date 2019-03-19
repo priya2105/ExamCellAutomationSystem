@@ -39,14 +39,49 @@ export default class Add_Marks extends Component {
            sub6:["CNDC","IWT"],
            sub7:["Soft Computing","IOT"],
            sub8:["OE1","OE2"],
-           sub:[]
+           sub:[],
+           regdid:[],
+           subject:"",
         }
         // this.handleChange1=this.handleChange1.bind(this);
         // this.handleChange=this.handleChange.bind(this);
         // this.handleChange2=this.handleChange2.bind(this);
        }
-      
     sem(event){
+      fetch('http://localhost:8000/semester',
+      {
+         method:'POST',
+         headers:{
+           Accept:'application/json',
+           'Content-Type':'application/json'
+         },
+         
+         body:JSON.stringify({
+            semester:event.target.value
+         }),
+
+         
+     })
+       
+      .then((response) => response.json())
+      .then((responseJson) => {
+      
+    
+      console.log(responseJson);
+       this.setState({
+        regdid:responseJson.result
+        
+      })
+     
+      
+     
+    })
+      
+      .catch((error) =>{
+        console.error(error);
+      }); console.log(this.state.usrname);
+     
+      console.log(this.state.regdid)
 this.setState({
 semester:event.target.value
 })
@@ -90,10 +125,28 @@ else if(event.target.value=="8th"){
  })
 }
     }
+    regid(event){
+      this.setState({
+        id:event.target.value
+      })
+  }
     subject(event){
         this.setState({
             subject:event.target.value
         })
+    }
+    clear(){
+      this.setState({
+        subject:"",
+        semester:"",
+        id:"",
+        int1:0,
+           int2:0,
+           quiz:0,
+           surprise:0,
+           attendance:0,
+           total:0,
+    })
     }
     int1(event){
         
@@ -247,11 +300,16 @@ else if(event.target.value=="8th"){
           label="Student_ID"
           select
           placeholder="Select"
-         
+          value={this.state.id}
+          onChange={this.regid.bind(this)}
 
           style={{marginLeft:10, width:175,backgroundColor:"white"}}
         >
-        
+          {this.state.regdid.map(option => (
+            <MenuItem key={option.RegdID} value={option.RegdID}>
+              {option.RegdID}
+            </MenuItem>
+          ))}
         
         </TextField>
         <TextField
@@ -324,7 +382,8 @@ else if(event.target.value=="8th"){
          <br></br>
          
         
-        <Button style={{marginTop:10, fontSize:12,color:"black",marginLeft:40, backgroundColor:"grey"}} >Submit</Button>
+        <Button style={{marginTop:10, fontSize:12,color:"black",marginLeft:30, backgroundColor:"grey"}} >Submit</Button>
+        <Button style={{marginTop:10, fontSize:12,color:"black",marginLeft:60, backgroundColor:"grey"}} onClick={this.clear.bind(this)} >Clear</Button>
         
         </Card>
          </tr>
