@@ -231,63 +231,63 @@ app.post('/addmarks', function (req, res) {
   "Data_Structure.0.total":total,
   
 }})}  
-else if(semester=="2nd" && subject=="Data_Structure"){
+else if(semester=="2nd" && subject=="Applied_physics"){
   console.log("1");
  var ob= dbo.collection("1").update({ RegdID:id},{$set:{
-  " Applied_physics.0.internal1":int1,
-" Applied_physics.0.internal2":int2,
-" Applied_physics.0.quiz":quiz,
-" Applied_physics.0.surprise_test":surprise,
-" Applied_physics.0.attendance":attendance,
-" Applied_physics.0.total":total,
+  "Applied_physics.0.internal1":int1,
+"Applied_physics.0.internal2":int2,
+"Applied_physics.0.quiz":quiz,
+"Applied_physics.0.surprise_test":surprise,
+"Applied_physics.0.attendance":attendance,
+"Applied_physics.0.total":total,
 
 }})}  
 
-else if(semester=="2nd" && subject=="Data_Structure"){
+else if(semester=="2nd" && subject==" Basic_electrical_engg"){
   console.log("1");
  var ob= dbo.collection("1").update({ RegdID:id},{$set:{
-  " Applied_physics.0.internal1":int1,
-" Applied_physics.0.internal2":int2,
-" Applied_physics.0.quiz":quiz,
-" Applied_physics.0.surprise_test":surprise,
-" Applied_physics.0.attendance":attendance,
-" Applied_physics.0.total":total,
+  "Basic_electrical_engg.0.internal1":int1,
+"Basic_electrical_engg.internal2":int2,
+"Basic_electrical_engg.0.quiz":quiz,
+"Basic_electrical_engg.0.surprise_test":surprise,
+"Basic_electrical_engg.0.attendance":attendance,
+"Basic_electrical_engg.0.total":total,
 
 }})}  
 
-else if(semester=="2nd" && subject=="Data_Structure"){
+else if(semester=="2nd" && subject=="EVS"){
   console.log("1");
  var ob= dbo.collection("1").update({ RegdID:id},{$set:{
-  "  EVS.0.internal1":int1,
-  "  EVS.0.internal2":int2,
-  "  EVS.0.quiz":quiz,
-  "  EVS.0.surprise_test":surprise,
-  "  EVS.0.attendance":attendance,
-  "  EVS.0.total":total,
+  "EVS.0.internal1":int1,
+  "EVS.0.internal2":int2,
+  "EVS.0.quiz":quiz,
+  "EVS.0.surprise_test":surprise,
+  "EVS.0.attendance":attendance,
+  "EVS.0.total":total,
   
 
 }})}  
 
-else if(semester=="2nd" && subject=="Data_Structure"){
+else if(semester=="2nd" && subject=="Basic_mechanical_engg"){
   console.log("1");
  var ob= dbo.collection("1").update({ RegdID:id},{$set:{
-  "  Basic_mechanical_engg.0.internal1":int1,
-"  Basic_mechanical_engg.0.internal2":int2,
-"  Basic_mechanical_engg.0.quiz":quiz,
-"  Basic_mechanical_engg.0.surprise_test":surprise,
-"  Basic_mechanical_engg.0.attendance":attendance,
-"  Basic_mechanical_engg.0.total":total,
+  "Basic_mechanical_engg.0.internal1":int1,
+"Basic_mechanical_engg.0.internal2":int2,
+"Basic_mechanical_engg.0.quiz":quiz,
+"Basic_mechanical_engg.0.surprise_test":surprise,
+"Basic_mechanical_engg.0.attendance":attendance,
+"Basic_mechanical_engg.0.total":total,
 
 }})}  
-else if(semester=="2nd" && subject=="Data_Structure"){
+else if(semester=="2nd" && subject==" Applied_mathematics_II"){
   console.log("1");
  var ob= dbo.collection("1").update({ RegdID:id},{$set:{
-  "  Applied_mathematics_II.0.internal1":int1,
-  "  Applied_mathematics_II.0.internal2":int2,
-  "  Applied_mathematics_II.0.quiz":quiz,
-  "  Applied_mathematics_II.0.surprise_test":surprise,
-  "  Applied_mathematics_II.0.attendance":attendance,
-  "  Applied_mathematics_II.0.total":total,
+  "Applied_mathematics_II.0.internal1":int1,
+  "Applied_mathematics_II.0.internal2":int2,
+  "Applied_mathematics_II.0.quiz":quiz,
+  "Applied_mathematics_II.0.surprise_test":surprise,
+  "Applied_mathematics_II.0.attendance":attendance,
+  "Applied_mathematics_II.0.total":total,
   
 
 }})}  
