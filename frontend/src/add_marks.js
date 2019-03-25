@@ -31,8 +31,8 @@ export default class Add_Marks extends Component {
            attendance:0,
            id:"",
            total:0,
-           sub1:["maths1","english"],
-           sub2:["maths2","evs"],
+           sub1:["c_programming","Applied mathematics I","Basic Civil Engineering","Applied chemistry","English Communication","Professional Ethics"],
+           sub2:[" Data_Structue","evs"],
            sub3:["Discrete Structure","System Programming"],
            sub4:["FLAT","DAA"],
            sub5:["Ecom","OS"],
@@ -209,7 +209,7 @@ else if(event.target.value=="8th"){
                 });console.log(this.state.total);
     }
     submit(){
-        fetch('http://localhost:8000/tuesday',
+        fetch('http://localhost:8000/addmarks',
         {
            method:'POST',
            headers:{
@@ -382,7 +382,7 @@ else if(event.target.value=="8th"){
          <br></br>
          
         
-        <Button style={{marginTop:10, fontSize:12,color:"black",marginLeft:30, backgroundColor:"grey"}} >Submit</Button>
+        <Button style={{marginTop:10, fontSize:12,color:"black",marginLeft:30, backgroundColor:"grey"}} onClick={this.submit.bind(this)} >Submit</Button>
         <Button style={{marginTop:10, fontSize:12,color:"black",marginLeft:60, backgroundColor:"grey"}} onClick={this.clear.bind(this)} >Clear</Button>
         
         </Card>
