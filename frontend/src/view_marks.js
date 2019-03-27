@@ -11,6 +11,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from '@material-ui/core/Grid';
+import MenuItem from '@material-ui/core/MenuItem';
 import{
   BrowserRouter as Router,Route,Link,Redirect
 } from"react-router-dom";
@@ -21,11 +22,13 @@ export default class View_Marks extends Component {
         this.state={
            id:'',
            sem:'',
+           semester:["1","2","3","4","5","6","7","8"],
            shown:true,
            
            subject1:[],
            subject2:[],
-           internal1:""
+           subject3:[]
+          
         }
          this.handlechange=this.handlechange.bind(this);
          this.handlechange1=this.handlechange1.bind(this);
@@ -57,14 +60,17 @@ export default class View_Marks extends Component {
                  
                  message:responseJson.result,
                  subject1:responseJson.result1,
-
+                 subject2:responseJson.result2,
+                 subject3:responseJson.result3,
                 
              })
            })
            .catch((error)=>{
              console.error(error);
             });console.log(this.state.subject1);
-           
+            this.setState({
+              shown: !this.state.shown,
+            });
           
           }
           handlechange(event){
@@ -133,12 +139,18 @@ export default class View_Marks extends Component {
          <TextField value={this.state.sem} onChange={this.handlechange1}
           id="outlined-email-input"
           label="Semester"
+          select
           placeholder="sem"
           type="email"
           name="email"
           margin="password"
           variant="outlined"
-        ></TextField>
+          style={{width:210}}
+        >  {this.state.semester.map(option => (
+          <MenuItem key={option} value={option}>
+            {option}
+          </MenuItem>
+        ))}</TextField>
         <br></br>
         
    <CardActions>
@@ -165,26 +177,38 @@ export default class View_Marks extends Component {
   <tr>
     <td>internal1</td>
     <td> {this.state.subject1[0]}   </td> 
+    <td> {this.state.subject2[0]}   </td> 
+    <td> {this.state.subject3[0]}   </td> 
   </tr>
   <tr>
     <td>internal2</td>
     <td>{this.state.subject1[1]}</td>
+    <td> {this.state.subject2[1]}   </td> 
+    <td> {this.state.subject3[1]}   </td> 
   </tr>
   <tr>
     <td>quiz</td>
     <td>{this.state.subject1[2]}</td> 
+    <td> {this.state.subject2[2]}   </td> 
+    <td> {this.state.subject3[2]}   </td> 
   </tr>
   <tr>
     <td>surprise_test</td>
     <td>{this.state.subject1[3]}</td>
+    <td> {this.state.subject2[3]}   </td> 
+    <td> {this.state.subject3[3]}   </td> 
   </tr>
   <tr>
     <td>assignment</td>
     <td>{this.state.subject1[4]}</td>
+    <td> {this.state.subject2[4]}   </td> 
+    <td> {this.state.subject3[4]}   </td> 
   </tr>
   <tr>
     <td>attendence</td>
     <td>{this.state.subject1[5]}</td>
+    <td> {this.state.subject2[5]}   </td> 
+    <td> {this.state.subject3[5]}   </td> 
   </tr>
 </table>
 
