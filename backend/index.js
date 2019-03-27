@@ -747,9 +747,32 @@ app.post('/viewmarks', function (req, res) {
           var subject1_assignment=ress.c_programming[0].assignment;
           var subject1_attendence=ress.c_programming[0].attendance;
           var arr1=[subject1_internal1,subject1_internal2,subject1_quiz,subject1_surprise_test,subject1_assignment,subject1_attendence];
-          console.log(arr1);
-         res.json({result1:arr1,shown:false});
-        } 
+        }
+        for (var i = 0; i < ress.c_programming.length; i++)
+        {
+          var subject2_internal1=ress.Applied_mathematics_I[0].internal1;
+          var subject2_internal2=ress.Applied_mathematics_I[0].internal2;
+          var subject2_quiz=ress.Applied_mathematics_I[0].quiz;
+          var subject2_surprise_test=ress.Applied_mathematics_I[0].surprise_test;
+          var subject2_assignment=ress.Applied_mathematics_I[0].assignment;
+          var subject2_attendence=ress.Applied_mathematics_I[0].attendance;
+          var arr2=[subject2_internal1,subject2_internal2,subject2_quiz,subject2_surprise_test,subject2_assignment,subject2_attendence];
+          console.log(arr2);
+        }
+        for (var i = 0; i < ress.Basic_Civil_Engineering.length; i++)
+        {
+          var subject3_internal1=ress.Basic_Civil_Engineering[0].internal1;
+          var subject3_internal2=ress.Basic_Civil_Engineering[0].internal2;
+          var subject3_quiz=ress.Basic_Civil_Engineering[0].quiz;
+          var subject3_surprise_test=ress.Basic_Civil_Engineering[0].surprise_test;
+          var subject3_assignment=ress.Basic_Civil_Engineering[0].assignment;
+          var subject3_attendence=ress.Basic_Civil_Engineering[0].attendance;
+          var arr3=[subject3_internal1,subject3_internal2,subject3_quiz,subject3_surprise_test,subject3_assignment,subject3_attendence];
+          console.log(arr3);
+        }
+
+        
+        res.json({result1:arr1,result2:arr2,result3:arr3});
        // console.log(subject1);
        
        }

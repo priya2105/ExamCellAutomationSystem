@@ -11,6 +11,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from '@material-ui/core/Grid';
+import MenuItem from '@material-ui/core/MenuItem';
 import{
   BrowserRouter as Router,Route,Link,Redirect
 } from"react-router-dom";
@@ -21,32 +22,24 @@ export default class View_Marks extends Component {
         this.state={
            id:'',
            sem:'',
+           semester:["1","2","3","4","5","6","7","8"],
            shown:true,
-           hidden:true,
+           show: 'none',
+           show1: 'inline',
+          // clicked:false,
            subject1:[],
            subject2:[],
-           internal1:""
+           subject3:[]
+          
         }
          this.handlechange=this.handlechange.bind(this);
          this.handlechange1=this.handlechange1.bind(this);
         // this.handleChange2=this.handleChange2.bind(this);
        }
-       show() {
-        this.setState({
-          show1: 'inline',
-          show: 'none',
-          empname: '',
-          employee: '',
-          hiden:false,
-          shown: !this.state.shown,
-          message:'',
-        })
-      }
        viewmarks()
        {
            this.setState({
-      show1: 'none',
-      show: 'inline'
+         
     })
          fetch('http://localhost:8000/viewmarks',
          {
@@ -65,17 +58,19 @@ export default class View_Marks extends Component {
            .then((responseJson)=>{
              console.log(responseJson);
              this.setState({
-                 shown:responseJson.shown,
                  message:responseJson.result,
                  subject1:responseJson.result1,
-
+                 subject2:responseJson.result2,
+                 subject3:responseJson.result3,
                 
              })
            })
            .catch((error)=>{
              console.error(error);
             });console.log(this.state.subject1);
-           
+            this.setState({
+              shown: !this.state.shown,
+            });
           
           }
           handlechange(event){
@@ -96,12 +91,12 @@ export default class View_Marks extends Component {
     
        render(){
         var shown = {
-            display: this.state.shown ? "block" : "none"
-          };
-      
-          var hidden = {
-            display: this.state.shown ? "none" : "block"
-          }
+          display: this.state.shown ? "block" : "none"
+        };
+    
+        var hidden = {
+          display: this.state.shown ? "none" : "block"
+        }
         return (
             <div style={{height:"100vh"}}>
             <table className="body" style={{width:"100%",backgroundColor:'white',height:"100%"}}>
@@ -125,8 +120,8 @@ export default class View_Marks extends Component {
          </tr>
          <tr>
          <Grid container justify="center">
-             <Card style={{height:500,width:800,padding:50, marginTop:0}}>
-             <CardContent style={shown}>
+             <Card style={{height:200,width:300,padding:50, marginTop:0,shown}}>
+             <CardContent>
       <Grid container justify="center">
       <h3>VIEW MARKS</h3>
     <TextField value={this.state.id} onChange={this.handlechange}
@@ -143,23 +138,31 @@ export default class View_Marks extends Component {
          <TextField value={this.state.sem} onChange={this.handlechange1}
           id="outlined-email-input"
           label="Semester"
+          select
           placeholder="sem"
           type="email"
           name="email"
           margin="password"
           variant="outlined"
-        ></TextField>
+          style={{width:210}}
+        >  {this.state.semester.map(option => (
+          <MenuItem key={option} value={option}>
+            {option}
+          </MenuItem>
+        ))}</TextField>
         <br></br>
         </Grid>
    <CardActions>
           <Grid container justify="center">
-            <Button variant="contained" size="small" color="primary" marginBottom=" 12"  onClick={this.viewmarks.bind(this)}>}> 
+            <Button variant="contained" size="small" color="primary" marginBottom=" 12"  onClick={this.viewmarks.bind(this)}>
               Submit
             </Button>
              </Grid>
              </CardActions></CardContent>
-             
-                 <CardContent style={hidden}>
+             </Card>
+       
+             <Card style={{height:500,width:700,padding:50, marginTop:0,hidden}}>
+                 <CardContent>
                <h1>SEMESTER-1</h1>
                <div> 
                <table style={{width:"100%"}}>
@@ -175,36 +178,48 @@ export default class View_Marks extends Component {
   <tr>
     <td>internal1</td>
     <td> {this.state.subject1[0]}   </td> 
+    <td> {this.state.subject2[0]}   </td> 
+    <td> {this.state.subject3[0]}   </td> 
   </tr>
   <tr>
     <td>internal2</td>
     <td>{this.state.subject1[1]}</td>
+    <td> {this.state.subject2[1]}   </td> 
+    <td> {this.state.subject3[1]}   </td> 
   </tr>
   <tr>
     <td>quiz</td>
     <td>{this.state.subject1[2]}</td> 
+    <td> {this.state.subject2[2]}   </td> 
+    <td> {this.state.subject3[2]}   </td> 
   </tr>
   <tr>
     <td>surprise_test</td>
     <td>{this.state.subject1[3]}</td>
+    <td> {this.state.subject2[3]}   </td> 
+    <td> {this.state.subject3[3]}   </td> 
   </tr>
   <tr>
     <td>assignment</td>
     <td>{this.state.subject1[4]}</td>
+    <td> {this.state.subject2[4]}   </td> 
+    <td> {this.state.subject3[4]}   </td> 
   </tr>
   <tr>
     <td>attendence</td>
     <td>{this.state.subject1[5]}</td>
+    <td> {this.state.subject2[5]}   </td> 
+    <td> {this.state.subject3[5]}   </td> 
   </tr>
 </table>
 
              
           </div>
       
-           
-       
                  </CardContent>
+                 
              </Card>
+             
              </Grid>
          </tr>
         
