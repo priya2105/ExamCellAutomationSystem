@@ -436,6 +436,44 @@ app.post('/details', function (req, res) {
 
 
 
+app.post('/viewmarks', function (req, res) {
+  var id = req.body.id;
+  var sem = req.body.sem;
+  var message = "View Marks";
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("Exam_Cell_Automation");
+    if(sem =="1st"){
+      console.log("1");
+    var myobj = dbo.collection("1").findOne({ RegdID: id}, function (err, ress) {
+       if(ress)
+       {var c_programming=[];
+       
+        for (var i = 0; i < ress.c_programming.length; i++)
+        {
+         c_programming.push(ress.c_programming[0]);
+         var arr1=[];
+         arr1=c_programming;
+        // console.log(arr1);
+         res.json({subject1:arr1,shown:false});
+        } 
+        console.log(subject1);
+       
+       }
+          
+      });
+    
+        
+      }
+      else {
+        console.log(" not found");
+      }
+      db.close();
+    });
+  });
+
+
+
 
 
 
