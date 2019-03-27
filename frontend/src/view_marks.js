@@ -22,7 +22,7 @@ export default class View_Marks extends Component {
            id:'',
            sem:'',
            shown:true,
-           hidden:true,
+           
            subject1:[],
            subject2:[],
            internal1:""
@@ -31,22 +31,11 @@ export default class View_Marks extends Component {
          this.handlechange1=this.handlechange1.bind(this);
         // this.handleChange2=this.handleChange2.bind(this);
        }
-       show() {
-        this.setState({
-          show1: 'inline',
-          show: 'none',
-          empname: '',
-          employee: '',
-          hiden:false,
-          shown: !this.state.shown,
-          message:'',
-        })
-      }
+       
        viewmarks()
        {
            this.setState({
-      show1: 'none',
-      show: 'inline'
+            shown: !this.state.shown
     })
          fetch('http://localhost:8000/viewmarks',
          {
@@ -65,7 +54,7 @@ export default class View_Marks extends Component {
            .then((responseJson)=>{
              console.log(responseJson);
              this.setState({
-                 shown:responseJson.shown,
+                 
                  message:responseJson.result,
                  subject1:responseJson.result1,
 
@@ -96,12 +85,12 @@ export default class View_Marks extends Component {
     
        render(){
         var shown = {
-            display: this.state.shown ? "block" : "none"
-          };
-      
-          var hidden = {
-            display: this.state.shown ? "none" : "block"
-          }
+          display: this.state.shown ? "block" : "none"
+        };
+        
+        var hidden = {
+          display: this.state.shown ? "none" : "block"
+        }
         return (
             <div style={{height:"100vh"}}>
             <table className="body" style={{width:"100%",backgroundColor:'white',height:"100%"}}>
@@ -123,12 +112,13 @@ export default class View_Marks extends Component {
               
         </ul>
          </tr>
-         <tr>
+         <tr><div>
          <Grid container justify="center">
-             <Card style={{height:500,width:800,padding:50, marginTop:0}}>
-             <CardContent style={shown}>
+             
+           <Card style={shown }>  <CardContent style={{height:250,width:380, marginTop:0}}>
       <Grid container justify="center">
-      <h3>VIEW MARKS</h3>
+      <h3>VIEW MARKS</h3></Grid>
+
     <TextField value={this.state.id} onChange={this.handlechange}
           id="outlined-email-input"
           label="ID"
@@ -150,16 +140,16 @@ export default class View_Marks extends Component {
           variant="outlined"
         ></TextField>
         <br></br>
-        </Grid>
+        
    <CardActions>
           <Grid container justify="center">
-            <Button variant="contained" size="small" color="primary" marginBottom=" 12"  onClick={this.viewmarks.bind(this)}>}> 
+            <Button variant="contained" size="small" color="primary" marginBottom=" 12"  onClick={this.viewmarks.bind(this)}> 
               Submit
             </Button>
              </Grid>
-             </CardActions></CardContent>
+             </CardActions></CardContent></Card>
              
-                 <CardContent style={hidden}>
+             <Card  style={hidden}>   <CardContent style={{height:350,width:800, marginTop:0}}>
                <h1>SEMESTER-1</h1>
                <div> 
                <table style={{width:"100%"}}>
@@ -203,10 +193,10 @@ export default class View_Marks extends Component {
       
            
        
-                 </CardContent>
-             </Card>
+                 </CardContent></Card> 
+             
              </Grid>
-         </tr>
+             </div></tr>
         
          </table>
          </div>
