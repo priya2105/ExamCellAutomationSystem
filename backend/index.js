@@ -139,8 +139,165 @@ app.post('/add_student', function (req, res) {
 })
 
 
+app.post('/addmarks', function (req, res) {
+  var id = req.body.id;
+  var semester = req.body.semester;
+  var  subject= req.body.subject;
+  var int1 = req.body.int1;
+  var int2=req.body.int2;
+  var quiz=req.body.quiz;
+  var surprise=req.body.surprise;
+  var attendance=req.body.attendance;
+  var total=req.body.total;
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    console.log("connected");
+    var dbo = db.db("Exam_Cell_Automation");
+    var myobj = dbo.collection(id, function (err, ress1) {
+      console.log("entered");
+        if(semester=="1st" && subject=="c_programming"){
+          console.log("1");
+         var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+            "c_programming.0.internal1":int1,
+            "c_programming.0.internal2":int2,
+            "c_programming.0.quiz":quiz,
+            "c_programming.0.surprise_test":surprise,
+            "c_programming.0.attendance":attendance,
+            "c_programming.0.total":total,
+            
+          }})}
+         else if(semester=="1st" && subject=="Applied_mathematics_I"){
+            console.log("1");
+           var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+            "Applied_mathematics_I.0.internal1":int1,
+            "Applied_mathematics_I.0.internal2":int2,
+            "Applied_mathematics_I.0.quiz":quiz,
+            "Applied_mathematics_I.0.surprise_test":surprise,
+            "Applied_mathematics_I.0.attendance":attendance,
+            "Applied_mathematics_I.0.total":total,
+            
+              
+            }})}
+            else if(semester=="1st" && subject=="Basic_Civil_Engineering"){
+              console.log("1");
+             var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+              "Basic_Civil_Engineering.0.internal1":int1,
+"Basic_Civil_Engineering.0.internal2":int2,
+"Basic_Civil_Engineering.0.quiz":quiz,
+"Basic_Civil_Engineering.0.surprise_test":surprise,
+"Basic_Civil_Engineering.0.attendance":attendance,
+"Basic_Civil_Engineering.0.total":total,
+
+              }})}
+              else if(semester=="1st" && subject=="Applied_chemistry"){
+                console.log("1");
+               var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+                "Applied_chemistry.0.internal1":int1,
+                "Applied_chemistry.0.internal2":int2,
+                "Applied_chemistry.0.quiz":quiz,
+                "Applied_chemistry.0.surprise_test":surprise,
+                "Applied_chemistry.0.attendance":attendance,
+                "Applied_chemistry.0.total":total,
+                }})}
+                else if(semester=="1st" && subject=="English_Communication"){
+                  console.log("1");
+                 var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+                  "English_Communication.0.internal1":int1,
+"English_Communication.0.internal2":int2,
+"English_Communication.0.quiz":quiz,
+"English_Communication.0.surprise_test":surprise,
+"English_Communication.0.attendance":attendance,
+"English_Communication.0.total":total,
+
+                  }})}  
+                  else if(semester=="1st" && subject=="Professional_Ethics"){
+                    console.log("1");
+                   var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+                    "Professional_Ethics.0.internal1":int1,
+"Professional_Ethics.0.internal2":int2,
+"Professional_Ethics.0.quiz":quiz,
+"Professional_Ethics.0.surprise_test":surprise,
+"Professional_Ethics.0.attendance":attendance,
+"Professional_Ethics.0.total":total,
+ }})}  
+ else if(semester=="2nd" && subject=="Data_Structure"){
+  console.log("1");
+ var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+  "Data_Structure.0.internal1":int1,
+  "Data_Structure.0.internal2":int2,
+  "Data_Structure.0.quiz":quiz,
+  "Data_Structure.0.surprise_test":surprise,
+  "Data_Structure.0.attendance":attendance,
+  "Data_Structure.0.total":total,
+  
+}})}  
+else if(semester=="2nd" && subject=="Applied_physics"){
+  console.log("1");
+ var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+  "Applied_physics.0.internal1":int1,
+"Applied_physics.0.internal2":int2,
+"Applied_physics.0.quiz":quiz,
+"Applied_physics.0.surprise_test":surprise,
+"Applied_physics.0.attendance":attendance,
+"Applied_physics.0.total":total,
+
+}})}  
+
+else if(semester=="2nd" && subject==" Basic_electrical_engg"){
+  console.log("1");
+ var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+  "Basic_electrical_engg.0.internal1":int1,
+"Basic_electrical_engg.internal2":int2,
+"Basic_electrical_engg.0.quiz":quiz,
+"Basic_electrical_engg.0.surprise_test":surprise,
+"Basic_electrical_engg.0.attendance":attendance,
+"Basic_electrical_engg.0.total":total,
+
+}})}  
+
+else if(semester=="2nd" && subject=="EVS"){
+  console.log("1");
+ var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+  "EVS.0.internal1":int1,
+  "EVS.0.internal2":int2,
+  "EVS.0.quiz":quiz,
+  "EVS.0.surprise_test":surprise,
+  "EVS.0.attendance":attendance,
+  "EVS.0.total":total,
+  
+
+}})}  
+
+else if(semester=="2nd" && subject=="Basic_mechanical_engg"){
+  console.log("1");
+ var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+  "Basic_mechanical_engg.0.internal1":int1,
+"Basic_mechanical_engg.0.internal2":int2,
+"Basic_mechanical_engg.0.quiz":quiz,
+"Basic_mechanical_engg.0.surprise_test":surprise,
+"Basic_mechanical_engg.0.attendance":attendance,
+"Basic_mechanical_engg.0.total":total,
+
+}})}  
+else if(semester=="2nd" && subject==" Applied_mathematics_II"){
+  console.log("1");
+ var ob= dbo.collection("1").update({ RegdID:id},{$set:{
+  "Applied_mathematics_II.0.internal1":int1,
+  "Applied_mathematics_II.0.internal2":int2,
+  "Applied_mathematics_II.0.quiz":quiz,
+  "Applied_mathematics_II.0.surprise_test":surprise,
+  "Applied_mathematics_II.0.attendance":attendance,
+  "Applied_mathematics_II.0.total":total,
+  
+
+}})}  
 
 
+        
+
+
+          })})
+})
 app.post('/details', function (req, res) {
   var id1 = req.body.id;
   var name1 = req.body.name
@@ -433,7 +590,139 @@ app.post('/details', function (req, res) {
     });
 
 });
+app.post('/semester', function (req, res) {
+  var id1 = req.body.id;
+  var semester = req.body.semester;
+  var loading;
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    console.log("connected");
+    console.log(semester);
+    var dbo = db.db("Exam_Cell_Automation");
+    if(semester=="1st"){
+    var myobj1 = dbo.collection("1").find({}).toArray(function(err1 , ress){
+      if (err1) {
+        console.log(err1)
+        }
+    
+          else {
+            var arr = [];
+            console.log(ress);
+            for (var i = 0; i < ress.length; i++) {
+              arr.push(ress[i]);
+            }
+            res.json({result:arr});
+            
+          }})}
 
+    else if(semester=="2nd"){
+   var myobj1 = dbo.collection("2").find({}).toArray(function(err1 , ress){
+    if (err1) {
+      console.log(err1)
+      }
+  
+        else {
+          var arr = [];
+          console.log(ress);
+          for (var i = 0; i < ress.length; i++) {
+            arr.push(ress[i]);
+          }
+          res.json({result:arr});
+          
+        }})}
+  if(semester=="3rd"){
+ var myobj1 = dbo.collection("3").find({}).toArray(function(err1 , ress){
+  if (err1) {
+    console.log(err1)
+    }
+
+      else {
+        var arr = [];
+        console.log(ress);
+        for (var i = 0; i < ress.length; i++) {
+          arr.push(ress[i]);
+        }
+        res.json({result:arr});
+        
+      }})}
+ if(semester=="4th"){
+var myobj1 = dbo.collection("4").find({}).toArray(function(err1 , ress){
+  if (err1) {
+    console.log(err1)
+    }
+
+      else {
+        var arr = [];
+        console.log(ress);
+        for (var i = 0; i < ress.length; i++) {
+          arr.push(ress[i]);
+        }
+        res.json({result:arr});
+        
+      }})}
+ if(semester=="5th"){
+ var myobj1 = dbo.collection("5").find({}).toArray(function(err1 , ress){
+  if (err1) {
+    console.log(err1)
+    }
+
+      else {
+        var arr = [];
+        console.log(ress);
+        for (var i = 0; i < ress.length; i++) {
+          arr.push(ress[i]);
+        }
+        res.json({result:arr});
+        
+      }})}
+ if(semester=="6th"){
+  var myobj1 = dbo.collection("6").find({}).toArray(function(err1 , ress){
+    if (err1) {
+      console.log(err1)
+      }
+  
+        else {
+          var arr = [];
+          console.log(ress);
+          for (var i = 0; i < ress.length; i++) {
+            arr.push(ress[i]);
+          }
+          res.json({result:arr});
+          
+        }})}
+ if(semester=="7th"){
+  var myobj1 = dbo.collection("7").find({}).toArray(function(err1 , ress){
+    if (err1) {
+      console.log(err1)
+      }
+  
+        else {
+          var arr = [];
+          console.log(ress);
+          for (var i = 0; i < ress.length; i++) {
+            arr.push(ress[i]);
+          }
+          res.json({result:arr});
+          
+        }})}
+ if(semester=="8th"){
+   var myobj1 = dbo.collection("8").find({}).toArray(function(err1 , ress){
+    if (err1) {
+      console.log(err1)
+      }
+  
+        else {
+          var arr = [];
+          console.log(ress);
+          for (var i = 0; i < ress.length; i++) {
+            arr.push(ress[i]);
+          }
+          res.json({result:arr});
+          
+        }})}
+    });
+
+});
 
 
 app.post('/viewmarks', function (req, res) {
