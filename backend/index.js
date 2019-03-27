@@ -732,21 +732,25 @@ app.post('/viewmarks', function (req, res) {
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("Exam_Cell_Automation");
-    if(sem =="1st"){
+    if(sem =="1"){
       console.log("1");
     var myobj = dbo.collection("1").findOne({ RegdID: id}, function (err, ress) {
        if(ress)
-       {var c_programming=[];
+       {
        
         for (var i = 0; i < ress.c_programming.length; i++)
         {
-         c_programming.push(ress.c_programming[0]);
-         var arr1=[];
-         arr1=c_programming;
-        // console.log(arr1);
-         res.json({subject1:arr1,shown:false});
+          var subject1_internal1=ress.c_programming[0].internal1;
+          var subject1_internal2=ress.c_programming[0].internal2;
+          var subject1_quiz=ress.c_programming[0].quiz;
+          var subject1_surprise_test=ress.c_programming[0].surprise_test;
+          var subject1_assignment=ress.c_programming[0].assignment;
+          var subject1_attendence=ress.c_programming[0].attendance;
+          var arr1=[subject1_internal1,subject1_internal2,subject1_quiz,subject1_surprise_test,subject1_assignment,subject1_attendence];
+          console.log(arr1);
+         res.json({result1:arr1,shown:false});
         } 
-        console.log(subject1);
+       // console.log(subject1);
        
        }
           

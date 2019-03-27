@@ -67,14 +67,14 @@ export default class View_Marks extends Component {
              this.setState({
                  shown:responseJson.shown,
                  message:responseJson.result,
-                 subject1:responseJson.subject1,
-                 subject2:responseJson.subject2,
-                 internal1:responseJson.subject1[0].internal1
+                 subject1:responseJson.result1,
+
+                
              })
            })
            .catch((error)=>{
              console.error(error);
-            });console.log(this.state.internal1);
+            });console.log(this.state.subject1);
            
           
           }
@@ -125,7 +125,7 @@ export default class View_Marks extends Component {
          </tr>
          <tr>
          <Grid container justify="center">
-             <Card style={{height:250,width:180,padding:50, marginTop:0}}>
+             <Card style={{height:500,width:800,padding:50, marginTop:0}}>
              <CardContent style={shown}>
       <Grid container justify="center">
       <h3>VIEW MARKS</h3>
@@ -160,12 +160,45 @@ export default class View_Marks extends Component {
              </CardActions></CardContent>
              
                  <CardContent style={hidden}>
-
+               <h1>SEMESTER-1</h1>
                <div> 
-               {this.state.subject1.map(option => (
-            <label>C_Programming:{option}</label>
-           
-          ))}
+               <table style={{width:"100%"}}>
+  <tr>
+    <th>Marks</th>
+    <th>c_programming</th> 
+    <th>applied_maths1</th>
+    <th>bce</th>
+    <th>applied_chem</th>
+    <th>english</th>
+    <th>professional_ethics</th>
+  </tr>
+  <tr>
+    <td>internal1</td>
+    <td> {this.state.subject1[0]}   </td> 
+  </tr>
+  <tr>
+    <td>internal2</td>
+    <td>{this.state.subject1[1]}</td>
+  </tr>
+  <tr>
+    <td>quiz</td>
+    <td>{this.state.subject1[2]}</td> 
+  </tr>
+  <tr>
+    <td>surprise_test</td>
+    <td>{this.state.subject1[3]}</td>
+  </tr>
+  <tr>
+    <td>assignment</td>
+    <td>{this.state.subject1[4]}</td>
+  </tr>
+  <tr>
+    <td>attendence</td>
+    <td>{this.state.subject1[5]}</td>
+  </tr>
+</table>
+
+             
           </div>
       
            
