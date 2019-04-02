@@ -24,10 +24,12 @@ export default class View_Marks extends Component {
            sem:'',
            semester:["1","2","3","4","5","6","7","8"],
            shown:true,
-           
            subject1:[],
            subject2:[],
-           subject3:[]
+           subject3:[],
+           subject4:[],
+           subject5:[],
+           subject6:[]
           
         }
          this.handlechange=this.handlechange.bind(this);
@@ -62,6 +64,9 @@ export default class View_Marks extends Component {
                  subject1:responseJson.result1,
                  subject2:responseJson.result2,
                  subject3:responseJson.result3,
+                 subject4:responseJson.result4,
+                 subject5:responseJson.result5,
+                 subject6:responseJson.result6
                 
              })
            })
@@ -179,44 +184,57 @@ export default class View_Marks extends Component {
     <td> {this.state.subject1[0]}   </td> 
     <td> {this.state.subject2[0]}   </td> 
     <td> {this.state.subject3[0]}   </td> 
+    <td> {this.state.subject4[0]}   </td> 
+    <td> {this.state.subject5[0]}   </td> 
+    <td> {this.state.subject6[0]}   </td> 
   </tr>
   <tr>
     <td>internal2</td>
     <td>{this.state.subject1[1]}</td>
     <td> {this.state.subject2[1]}   </td> 
     <td> {this.state.subject3[1]}   </td> 
+    <td>{this.state.subject4[1]}</td>
+    <td> {this.state.subject5[1]}   </td> 
+    <td> {this.state.subject6[1]}   </td> 
   </tr>
   <tr>
     <td>quiz</td>
     <td>{this.state.subject1[2]}</td> 
     <td> {this.state.subject2[2]}   </td> 
     <td> {this.state.subject3[2]}   </td> 
+    <td>{this.state.subject4[2]}</td> 
+    <td> {this.state.subject5[2]}   </td> 
+    <td> {this.state.subject6[2]}   </td> 
   </tr>
   <tr>
     <td>surprise_test</td>
     <td>{this.state.subject1[3]}</td>
     <td> {this.state.subject2[3]}   </td> 
     <td> {this.state.subject3[3]}   </td> 
+    <td>{this.state.subject4[3]}</td>
+    <td> {this.state.subject5[3]}   </td> 
+    <td> {this.state.subject6[3]}   </td> 
   </tr>
   <tr>
     <td>assignment</td>
     <td>{this.state.subject1[4]}</td>
     <td> {this.state.subject2[4]}   </td> 
     <td> {this.state.subject3[4]}   </td> 
+    <td>{this.state.subject4[4]}</td>
+    <td> {this.state.subject5[4]}   </td> 
+    <td> {this.state.subject6[4]}   </td> 
   </tr>
   <tr>
     <td>attendence</td>
     <td>{this.state.subject1[5]}</td>
     <td> {this.state.subject2[5]}   </td> 
     <td> {this.state.subject3[5]}   </td> 
+    <td>{this.state.subject4[5]}</td>
+    <td> {this.state.subject5[5]}   </td> 
+    <td> {this.state.subject6[5]}   </td> 
   </tr>
 </table>
-
-             
           </div>
-      
-           
-       
                  </CardContent></Card> 
              
              </Grid>

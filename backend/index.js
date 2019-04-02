@@ -770,17 +770,220 @@ app.post('/viewmarks', function (req, res) {
           var arr3=[subject3_internal1,subject3_internal2,subject3_quiz,subject3_surprise_test,subject3_assignment,subject3_attendence];
           console.log(arr3);
         }
-
+        for (var i = 0; i < ress.Applied_chemistry.length; i++)
+        {
+          var subject4_internal1=ress.Applied_chemistry[0].internal1;
+          var subject4_internal2=ress.Applied_chemistry[0].internal2;
+          var subject4_quiz=ress.Applied_chemistry[0].quiz;
+          var subject4_surprise_test=ress.Applied_chemistry[0].surprise_test;
+          var subject4_assignment=ress.Applied_chemistry[0].assignment;
+          var subject4_attendence=ress.Applied_chemistry[0].attendance;
+          var arr4=[subject4_internal1,subject4_internal2,subject4_quiz,subject4_surprise_test,subject4_assignment,subject4_attendence];
+          console.log(arr4);
+        }
+        for (var i = 0; i < ress.English_Communication.length; i++)
+        {
+          var subject5_internal1=ress.English_Communication[0].internal1;
+          var subject5_internal2=ress.English_Communication[0].internal2;
+          var subject5_quiz=ress.English_Communication[0].quiz;
+          var subject5_surprise_test=ress.English_Communication[0].surprise_test;
+          var subject5_assignment=ress.English_Communication[0].assignment;
+          var subject5_attendence=ress.English_Communication[0].attendance;
+          var arr5=[subject5_internal1,subject5_internal2,subject5_quiz,subject5_surprise_test,subject5_assignment,subject5_attendence];
+          console.log(arr5);
+        }
+        for (var i = 0; i < ress.Professional_Ethics.length; i++)
+        {
+          var subject6_internal1=ress.Professional_Ethics[0].internal1;
+          var subject6_internal2=ress.Professional_Ethics[0].internal2;
+          var subject6_quiz=ress.Professional_Ethics[0].quiz;
+          var subject6_surprise_test=ress.Professional_Ethics[0].surprise_test;
+          var subject6_assignment=ress.Professional_Ethics[0].assignment;
+          var subject6_attendence=ress.Professional_Ethics[0].attendance;
+          var arr6=[subject6_internal1,subject6_internal2,subject6_quiz,subject6_surprise_test,subject6_assignment,subject6_attendence];
+          console.log(arr6);
+        }
         
-        res.json({result1:arr1,result2:arr2,result3:arr3});
-       // console.log(subject1);
+        res.json({result1:arr1,result2:arr2,result3:arr3,result4:arr4,result5:arr5,result6:arr6});
+    
        
+       }
+       else {
+         console.log("does not exist");
        }
           
       });
     
         
       }
+    else if(sem =="2"){
+        console.log("2");
+      var myobj = dbo.collection("2").findOne({ RegdID: id}, function (err, ress) {
+         if(ress)
+         {
+         
+          for (var i = 0; i < ress.Data_Structue.length; i++)
+          {
+            var subject1_internal1=ress.Data_Structue[0].internal1;
+            var subject1_internal2=ress.Data_Structue[0].internal2;
+            var subject1_quiz=ress.Data_Structue[0].quiz;
+            var subject1_surprise_test=ress.Data_Structue[0].surprise_test;
+            var subject1_assignment=ress.Data_Structue[0].assignment;
+            var subject1_attendence=ress.Data_Structue[0].attendance;
+            var arr1=[subject1_internal1,subject1_internal2,subject1_quiz,subject1_surprise_test,subject1_assignment,subject1_attendence];
+          }
+          for (var i = 0; i < ress.Applied_physics.length; i++)
+          {
+            var subject2_internal1=ress.Applied_physics[0].internal1;
+            var subject2_internal2=ress.Applied_physics[0].internal2;
+            var subject2_quiz=ress.Applied_physics[0].quiz;
+            var subject2_surprise_test=ress.Applied_physics[0].surprise_test;
+            var subject2_assignment=ress.Applied_physics[0].assignment;
+            var subject2_attendence=ress.Applied_physics[0].attendance;
+            var arr2=[subject2_internal1,subject2_internal2,subject2_quiz,subject2_surprise_test,subject2_assignment,subject2_attendence];
+            console.log(arr2);
+          }
+          for (var i = 0; i < ress.Basic_electrical_engg.length; i++)
+          {
+            var subject3_internal1=ress.Basic_electrical_engg[0].internal1;
+            var subject3_internal2=ress.Basic_electrical_engg[0].internal2;
+            var subject3_quiz=ress.Basic_electrical_engg[0].quiz;
+            var subject3_surprise_test=ress.Basic_electrical_engg[0].surprise_test;
+            var subject3_assignment=ress.Basic_electrical_engg[0].assignment;
+            var subject3_attendence=ress.Basic_electrical_engg[0].attendance;
+            var arr3=[subject3_internal1,subject3_internal2,subject3_quiz,subject3_surprise_test,subject3_assignment,subject3_attendence];
+            console.log(arr3);
+          }
+          for (var i = 0; i < ress.EVS.length; i++)
+          {
+            var subject4_internal1=ress.EVS[0].internal1;
+            var subject4_internal2=ress.EVS[0].internal2;
+            var subject4_quiz=ress.EVS[0].quiz;
+            var subject4_surprise_test=ress.EVS[0].surprise_test;
+            var subject4_assignment=ress.EVS[0].assignment;
+            var subject4_attendence=ress.EVS[0].attendance;
+            var arr4=[subject4_internal1,subject4_internal2,subject4_quiz,subject4_surprise_test,subject4_assignment,subject4_attendence];
+            console.log(arr4);
+          }
+          for (var i = 0; i < ress.Basic_mechanical_engg.length; i++)
+          {
+            var subject5_internal1=ress.Basic_mechanical_engg[0].internal1;
+            var subject5_internal2=ress.Basic_mechanical_engg[0].internal2;
+            var subject5_quiz=ress.Basic_mechanical_engg[0].quiz;
+            var subject5_surprise_test=ress.Basic_mechanical_engg[0].surprise_test;
+            var subject5_assignment=ress.Basic_mechanical_engg[0].assignment;
+            var subject5_attendence=ress.Basic_mechanical_engg[0].attendance;
+            var arr5=[subject5_internal1,subject5_internal2,subject5_quiz,subject5_surprise_test,subject5_assignment,subject5_attendence];
+            console.log(arr5);
+          }
+          for (var i = 0; i < ress.Applied_mathematics_II.length; i++)
+          {
+            var subject6_internal1=ress.Applied_mathematics_II[0].internal1;
+            var subject6_internal2=ress.Applied_mathematics_II[0].internal2;
+            var subject6_quiz=ress.Applied_mathematics_II[0].quiz;
+            var subject6_surprise_test=ress.Applied_mathematics_II[0].surprise_test;
+            var subject6_assignment=ress.Applied_mathematics_II[0].assignment;
+            var subject6_attendence=ress.Applied_mathematics_II[0].attendance;
+            var arr6=[subject6_internal1,subject6_internal2,subject6_quiz,subject6_surprise_test,subject6_assignment,subject6_attendence];
+            console.log(arr6);
+          }
+          
+          res.json({result1:arr1,result2:arr2,result3:arr3,result4:arr4,result5:arr5,result6:arr6});
+      
+         
+         }
+         else {
+           console.log("does not exist");
+         }
+            
+        });
+      
+          
+        }
+    else if(sem =="3"){
+          console.log("3");
+        var myobj = dbo.collection("3").findOne({ RegdID: id}, function (err, ress) {
+           if(ress)
+           {
+           
+            for (var i = 0; i < ress.EEE.length; i++)
+            {
+              var subject1_internal1=ress.EEE[0].internal1;
+              var subject1_internal2=ress.EEE[0].internal2;
+              var subject1_quiz=ress.EEE[0].quiz;
+              var subject1_surprise_test=ress.EEE[0].surprise_test;
+              var subject1_assignment=ress.EEE[0].assignment;
+              var subject1_attendence=ress.EEE[0].attendance;
+              var arr1=[subject1_internal1,subject1_internal2,subject1_quiz,subject1_surprise_test,subject1_assignment,subject1_attendence];
+            }
+            for (var i = 0; i < ress.System_programming.length; i++)
+            {
+              var subject2_internal1=ress.System_programming[0].internal1;
+              var subject2_internal2=ress.System_programming[0].internal2;
+              var subject2_quiz=ress.System_programming[0].quiz;
+              var subject2_surprise_test=ress.System_programming[0].surprise_test;
+              var subject2_assignment=ress.System_programming[0].assignment;
+              var subject2_attendence=ress.System_programming[0].attendance;
+              var arr2=[subject2_internal1,subject2_internal2,subject2_quiz,subject2_surprise_test,subject2_assignment,subject2_attendence];
+              console.log(arr2);
+            }
+            for (var i = 0; i < ress.Basic_electrical_engg.length; i++)
+            {
+              var subject3_internal1=ress.Basic_electrical_engg[0].internal1;
+              var subject3_internal2=ress.Basic_electrical_engg[0].internal2;
+              var subject3_quiz=ress.Basic_electrical_engg[0].quiz;
+              var subject3_surprise_test=ress.Basic_electrical_engg[0].surprise_test;
+              var subject3_assignment=ress.Basic_electrical_engg[0].assignment;
+              var subject3_attendence=ress.Basic_electrical_engg[0].attendance;
+              var arr3=[subject3_internal1,subject3_internal2,subject3_quiz,subject3_surprise_test,subject3_assignment,subject3_attendence];
+              console.log(arr3);
+            }
+            for (var i = 0; i < ress.EVS.length; i++)
+            {
+              var subject4_internal1=ress.EVS[0].internal1;
+              var subject4_internal2=ress.EVS[0].internal2;
+              var subject4_quiz=ress.EVS[0].quiz;
+              var subject4_surprise_test=ress.EVS[0].surprise_test;
+              var subject4_assignment=ress.EVS[0].assignment;
+              var subject4_attendence=ress.EVS[0].attendance;
+              var arr4=[subject4_internal1,subject4_internal2,subject4_quiz,subject4_surprise_test,subject4_assignment,subject4_attendence];
+              console.log(arr4);
+            }
+            for (var i = 0; i < ress.Basic_mechanical_engg.length; i++)
+            {
+              var subject5_internal1=ress.Basic_mechanical_engg[0].internal1;
+              var subject5_internal2=ress.Basic_mechanical_engg[0].internal2;
+              var subject5_quiz=ress.Basic_mechanical_engg[0].quiz;
+              var subject5_surprise_test=ress.Basic_mechanical_engg[0].surprise_test;
+              var subject5_assignment=ress.Basic_mechanical_engg[0].assignment;
+              var subject5_attendence=ress.Basic_mechanical_engg[0].attendance;
+              var arr5=[subject5_internal1,subject5_internal2,subject5_quiz,subject5_surprise_test,subject5_assignment,subject5_attendence];
+              console.log(arr5);
+            }
+            for (var i = 0; i < ress.Applied_mathematics_II.length; i++)
+            {
+              var subject6_internal1=ress.Applied_mathematics_II[0].internal1;
+              var subject6_internal2=ress.Applied_mathematics_II[0].internal2;
+              var subject6_quiz=ress.Applied_mathematics_II[0].quiz;
+              var subject6_surprise_test=ress.Applied_mathematics_II[0].surprise_test;
+              var subject6_assignment=ress.Applied_mathematics_II[0].assignment;
+              var subject6_attendence=ress.Applied_mathematics_II[0].attendance;
+              var arr6=[subject6_internal1,subject6_internal2,subject6_quiz,subject6_surprise_test,subject6_assignment,subject6_attendence];
+              console.log(arr6);
+            }
+            
+            res.json({result1:arr1,result2:arr2,result3:arr3,result4:arr4,result5:arr5,result6:arr6});
+        
+           
+           }
+           else {
+             console.log("does not exist");
+           }
+              
+          });
+        
+            
+          }
       else {
         console.log(" not found");
       }
@@ -788,7 +991,30 @@ app.post('/viewmarks', function (req, res) {
     });
   });
 
-
+  app.post('/addnotice', function (req, res) {
+    var notice = req.body.notice;
+    console.log(notice);
+    
+    var date = req.body.date;
+    console.log(date);
+    
+    var file = req.body.file;
+    console.log(file);
+    
+    MongoClient.connect(url, function (err, db) {
+      if (err) throw err;
+      console.log("connected");
+      var dbo = db.db("Exam_Cell_Automation");
+      var myobj = dbo.collection("Notice").insert({ Notice: notice, Date: date,  File: file }, function (err1, ress) {
+        if (err1) {
+          console.log(err1)
+          
+        }
+        else {}
+      })
+    })
+    })
+    
 
 
 
